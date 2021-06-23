@@ -1,0 +1,7 @@
+*.config
+*.log
+/tests/*
+/dist/*
+/build/*
+/src/m3u_helper_icexmoon.egg-info/*
+__pycache__/
