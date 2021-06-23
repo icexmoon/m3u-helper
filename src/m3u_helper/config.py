@@ -22,3 +22,7 @@ class Config:
 
     def getDirSep(self):
         return os.sep
+
+    def getHelpFilePath(self):
+        """返回帮助文档的路径"""
+        return "{}{}{}".format(self.getProjectHomePath(), self.getDirSep(), "help.info")

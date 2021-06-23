@@ -1,0 +1,5 @@
+-h  --help  输出帮助信息
+-c  --check_connect 验证链接有效性
+-o  --order 对结果进行排序
+-a  --all   对m3u文件进行汇总，而非单个处理
+-n  --no_print  不显示处理过程信息

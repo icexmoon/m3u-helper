@@ -20,7 +20,7 @@ class Main:
     def __init__(self) -> None:
         self.checkConnect: bool = False  # 是否检查连接有效性
         self.doOrder: bool = False  # 是否进行排序
-        self.print: bool = True #是否输出控制台信息
+        self.print: bool = True  # 是否输出控制台信息
 
     def __isM3uFile(self, fileName: str) -> bool:
         if fileName.endswith(".m3u") or fileName.endswith(".m3u8"):
@@ -156,7 +156,7 @@ class Main:
             self.__groupChannelsByM3u8Obj(m3u8Obj, channelGroups)
         self.__formatGroupedChannels(channelGroups, distinyPath)
 
-    def __consolePrint(self, msg: str)->None:
+    def __consolePrint(self, msg: str) -> None:
         if self.print:
             print(msg)
 
@@ -184,5 +184,12 @@ class Main:
                     filePath = sysConfig.getCurrentUserWorkDirPath()+sysConfig.getDirSep()+fileName
                     m3u8Objs.append(self.__getM3U8FromM3uFile(filePath))
         if m3u8Objs:
-            distinyPath = sysConfig.getCurrentUserWorkDirPath()+sysConfig.getDirSep()+"all_in_one_formated.m3u"
+            distinyPath = sysConfig.getCurrentUserWorkDirPath()+sysConfig.getDirSep() + \
+                "all_in_one_formated.m3u"
             self.__mergeAndFormatM3U8Objs(m3u8Objs, distinyPath)
+
+    def showHelpInfo(self):
+        helpFilePath = Config.getInstance().getHelpFilePath()
+        with open(file=helpFilePath, encoding="UTF-8", mode="r") as fopen:
+            for line in fopen:
+                print(line, end="")
